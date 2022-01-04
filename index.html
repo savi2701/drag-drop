@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Kanban Board</h1>
+    <div class="container">
+        <div class="col col--todo">
+            <div class="col__header">
+                TO DO
+            </div>
+            <div class="col__body" id="todo-list">
+                <div class="col__list"></div>
+                <button class="col__add" type="button" onclick="openAddItemModal('todo-list-form')">+ Add Task</button>
+                <form class="add-item" id="todo-list-form"  style="display: none;">
+                    <input type="text" id="item-heading">
+                    <input type="text" id="item-description" style="margin: 0.25rem 0; height: 40px;">
+                    <div class="item-priority" style="margin: 0.25rem 0;">
+                        <input type="radio" name="priority" id="low" value="low">
+                        <label for="low">Low Priority</label>
+        
+                        <input type="radio" name="priority" id="medium" value="medium">
+                        <label for="medium">Medium Priority</label>
+        
+                        <input type="radio" name="priority" id="high" value="high">
+                        <label for="high">High Priority</label>
+                    </div>
+                    <button onclick="addItem('todo-list')" type="button">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="col col--progress">
+            <div class="col__header">
+                IN PROGRESS
+            </div>
+            <div class="col__body" id="progress-list">
+                <div class="col__list"></div>
+                <button class="col__add" type="button" onclick="openAddItemModal('progress-list-form')">+ Add Task</button>
+                <form class="add-item" id="progress-list-form" style="display: none;">
+                    <input type="text" id="item-heading">
+                    <input type="text" id="item-description" style="margin: 0.25rem 0; height: 40px;">
+                    <div class="item-priority">
+                        <input type="radio" name="priority-progress" id="plow" value="low">
+                        <label for="plow">Low Priority</label>
+        
+                        <input type="radio" name="priority-progress" id="pmedium" value="medium">
+                        <label for="pmedium">Medium Priority</label>
+        
+                        <input type="radio" name="priority-progress" id="phigh" value="high">
+                        <label for="phigh">High Priority</label>
+                    </div>
+                    <button onclick="addItem('progress-list')" type="button">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="col col--review">
+            <div class="col__header">
+                IN REVIEW
+            </div>
+            <div class="col__body" id="review-list">
+                <div class="col__list"></div>
+                <button class="col__add" type="button" onclick="openAddItemModal('review-list-form')">+ Add Task</button>
+                <form class="add-item" id="review-list-form"  style="display: none;">
+                    <input type="text" id="item-heading">
+                    <input type="text" id="item-description" style="margin: 0.25rem 0; height: 40px;">
+                    <div class="item-priority">
+                        <input type="radio" name="priority" id="rlow" value="low">
+                        <label for="rlow">Low Priority</label>
+        
+                        <input type="radio" name="priority" id="rmedium" value="medium">
+                        <label for="rmedium">Medium Priority</label>
+        
+                        <input type="radio" name="priority" id="rhigh" value="high">
+                        <label for="rhigh">High Priority</label>
+                    </div>
+                    <button onclick="addItem('review-list')" type="button">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="col col--done">
+            <div class="col__header">
+                DONE
+            </div>
+            <div class="col__body" id="done-list">
+                <div class="col__list"></div>
+                <button class="col__add" type="button" onclick="openAddItemModal('done-list-form')">+ Add Task</button>
+                <form class="add-item" id="done-list-form"  style="display: none;">
+                    <input type="text" id="item-heading">
+                    <input type="text" id="item-description" style="margin: 0.25rem 0; height: 40px;">
+                    <div class="item-priority">
+                        <input type="radio" name="priority" id="dlow" value="low">
+                        <label for="dlow">Low Priority</label>
+        
+                        <input type="radio" name="priority" id="dmedium" value="medium">
+                        <label for="dmedium">Medium Priority</label>
+        
+                        <input type="radio" name="priority" id="dhigh" value="high">
+                        <label for="dhigh">High Priority</label>
+                    </div>
+                    <button onclick="addItem('done-list')" type="button">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- <button class="clear" onclick="clearAll()">Clear All</button> -->
+    <script src="./script.js"></script>
+</body>
+</html>
